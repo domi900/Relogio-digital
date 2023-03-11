@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #caixarelogio{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #relogio{
+            border: 1px solid gray;
+            border-radius: 2.5%;
+            padding: 10%;
+            background-color: rgba(128, 128, 128, 0.3);
+        }
+        body {
+             background-image: url('fundo.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        #hora-atual{
+            font-size: 30pt;
+        }
+    </style>
+    <script>
+        function getHora() {
+            const data = new Date();
+            const hora = data.getHours();
+            const minutos = data.getMinutes();
+            const segundos = data.getSeconds();
+          
+            if(segundos > 10 && minutos > 10){
+                return hora + ":" + minutos + ":" + segundos;
+            }
+            else if(segundos < 10 && minutos < 10){
+                return hora + ":0" + minutos + ":0" + segundos;
+            }else if(minutos > 10 && segundos < 10){
+                return hora + ":" + minutos + ":0" + segundos;
+            }else if(minutos < 10 && segundos > 10){
+                return hora + ":0" + minutos + ":" + segundos;
+            }else{
+                return hora + ":0" + minutos + ":" + segundos;
+            }
+        }
+        
+        function exibirHora() {
+          const horaAtual = getHora();
+          document.getElementById("hora-atual").innerHTML = horaAtual;
+        }
+        
+        // Atualizar a hora a cada segundo
+        setInterval(exibirHora, 1000);
+      </script>
+</head>
+<body>
+    <section id="caixarelogio">
+        <div id="relogio">
+            <h1 id="hora-atual"></h1>
+        </div>
+    </section>
+</body>
+</html>
