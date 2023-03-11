@@ -1,4 +1,4 @@
-# Rel-gio-digital
+# Relogio-digital
 Relógio digital com atualização em tempo real usando JavaScript e HTML/CSS
 
 Este código mostra um relógio digital que é atualizado em tempo real usando JavaScript e HTML/CSS. A página é exibida em um fundo de imagem com o relógio centralizado 
